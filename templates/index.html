@@ -114,23 +114,23 @@
 
                         <div class="b-contact">
                             {% if person.email %}
-                                <a href="mailto:{{ person.email }}" class="e-contact-icon" alt="Email"><i class="fa fa-envelope"></i></a>
+                                <a href="mailto:{{ person.email }}" class="e-contact-icon" target="_blank" alt="Email"><i class="fa fa-envelope"></i></a>
                             {% endif %}
 
                             {% if person.facebook %}
-                                <a href="{{ person.facebook }}" class="e-contact-icon" alt="Facebook"  ><i class="fa fa-facebook"></i></a>
+                                <a href="{{ person.facebook }}" class="e-contact-icon" target="_blank" alt="Facebook"  ><i class="fa fa-facebook"></i></a>
                             {% endif %}
 
                             {% if person.linkedin %}
-                                <a href="{{ person.linkedin }}" class="e-contact-icon" alt="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                                <a href="{{ person.linkedin }}" class="e-contact-icon" target="_blank" alt="LinkedIn"><i class="fa fa-linkedin"></i></a>
                             {% endif %}
 
                             {% if person.twitter %}
-                                <a href="{{ person.twitter }}" class="e-contact-icon" alt="Twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="{{ person.twitter }}" class="e-contact-icon" target="_blank" alt="Twitter"><i class="fa fa-twitter"></i></a>
                             {% endif %}
 
                             {% if person.website %}
-                                <a href="{{ person.website }}" class="e-contact-icon" alt="Website"><i class="fa fa-home"></i></a>
+                                <a href="{{ person.website }}" class="e-contact-icon" target="_blank" alt="Website"><i class="fa fa-home"></i></a>
                             {% endif %}
                         </div>
 
