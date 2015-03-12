@@ -87,14 +87,14 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); }
 .b-content.move-right .inner-wrap {
-  -webkit-transform: translate3d(350px, 0, 0);
-  -moz-transform: translate3d(350px, 0, 0);
-  -ms-transform: translate3d(350px, 0, 0);
-  -o-transform: translate3d(350px, 0, 0);
-  transform: translate3d(350px, 0, 0); }
+  -webkit-transform: translate3d(290px, 0, 0);
+  -moz-transform: translate3d(290px, 0, 0);
+  -ms-transform: translate3d(290px, 0, 0);
+  -o-transform: translate3d(290px, 0, 0);
+  transform: translate3d(290px, 0, 0); }
 
 .b-offcanvas {
-  width: 310px;
+  width: 250px;
   padding: 80px 22px 20px 18px;
   overflow: hidden;
   background-color: white;
@@ -110,15 +110,16 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px; }
   .b-offcanvas .e-filter-tag {
     display: inline-block;
-    padding: 5px 12px 6px;
+    padding: 5px 10px 6px;
     border-radius: 2px;
     line-height: 1;
     background-color: #eee;
     color: black;
     color: rgba(0, 0, 0, 0.8);
-    cursor: pointer; }
+    cursor: pointer;
+    font-size: 13px; }
     .b-offcanvas .e-filter-tag .fa {
-      margin-left: 13px;
+      margin-left: 5px;
       width: 14px;
       opacity: .15; }
     .b-offcanvas .e-filter-tag:hover {
@@ -140,12 +141,13 @@ h1, h2, h3, h4, h5, h6 {
 .b-main-section {
   padding: 20px 0 30px; }
   .b-main-section .left-off-canvas-toggle {
-    padding: 4px 14px;
+    padding: 4px 10px;
     margin: 0;
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.1);
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: .3px;
+    font-weight: normal;
     color: #9D2232;
     cursor: pointer; }
     .b-main-section .left-off-canvas-toggle:hover {
