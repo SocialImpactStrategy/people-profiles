@@ -5,7 +5,7 @@ from staticjinja import make_site
 
 
 def slugy(x):
-    return slugify(x.decode('utf-8')).encode('ascii')
+    return slugify(x.decode('utf-8')).encode('ascii').lower()
 
 
 def loadAcademyData():
