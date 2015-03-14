@@ -50,6 +50,9 @@ def loadAcademyData():
     for key in ctx['filters'].keys():
         ctx['filters'][key] = sorted(list(ctx['filters'][key]))
 
+    ctx['people'].sort(key=lambda x: x['name'])
+    ctx['people'].sort(key=lambda x: x['last'])
+
     return ctx
 
 

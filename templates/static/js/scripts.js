@@ -13,6 +13,23 @@ $(document).ready(function() {
         layoutMode: 'fitRows'
     });
 
+    $('.b-offcanvas .b-item-wrapper').slideUp();
+
+    $('.b-offcanvas .m-filter-name').click(function() {
+        if ($(this).children().hasClass('fa-plus')) {
+            $(this).children().removeClass('fa-plus');
+            $(this).children().addClass('fa-minus');
+
+            $(this).next().slideDown();
+
+        } else {
+            $(this).children().removeClass('fa-minus');
+            $(this).children().addClass('fa-plus');
+
+            $(this).next().slideUp();
+        }
+    });
+
     $(document).on('open.fndtn.offcanvas', '[data-offcanvas]', function() {
         $('.left-off-canvas-toggle').addClass('m-active');
         $('.inner-wrap').height($('.b-offcanvas')[0].scrollHeight);

@@ -164,11 +164,20 @@ h1, h2, h3, h4, h5, h6 {
 
   .m-filter-name {
     min-width: 100px;
-    margin-top: 15px;
+    margin: 15px 0 0;
     font-size: 1.1rem;
     font-weight: bold;
     color: $red;
     text-transform: uppercase;
+    cursor: pointer;
+
+    .fa {
+      margin-left: 10px;
+    }
+  }
+
+  .b-item-wrapper {
+    margin-top: 8px;
   }
 
   .b-item + .b-item {

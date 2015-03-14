@@ -101,11 +101,16 @@ h1, h2, h3, h4, h5, h6 {
   text-align: right; }
   .b-offcanvas .m-filter-name {
     min-width: 100px;
-    margin-top: 15px;
+    margin: 15px 0 0;
     font-size: 1.1rem;
     font-weight: bold;
     color: #9D2232;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    cursor: pointer; }
+    .b-offcanvas .m-filter-name .fa {
+      margin-left: 10px; }
+  .b-offcanvas .b-item-wrapper {
+    margin-top: 8px; }
   .b-offcanvas .b-item + .b-item {
     margin-top: 10px; }
   .b-offcanvas .e-filter-tag {

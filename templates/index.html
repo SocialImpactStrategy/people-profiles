@@ -6,43 +6,53 @@
         <div class="inner-wrap">
             <aside class="b-offcanvas left-off-canvas-menu">
                 {% if filters.year %}
-                    <h2 class="m-filter-name">Year</h2>
+                    <h2 class="m-filter-name">Year <i class="fa fa-plus"></i></h2>
 
-                    {% for year in filters.year %}
-                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ year|slugy }}]">{{ year }}<i class="fa fa-plus"></i></span></div>
-                    {% endfor %}
+                    <div class="b-item-wrapper">
+                        {% for year in filters.year %}
+                            <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ year|slugy }}]">{{ year }}<i class="fa fa-plus"></i></span></div>
+                        {% endfor %}
+                    </div>
                 {% endif %}
 
                 {% if filters.affiliation %}
-                    <h2 class="m-filter-name">Affiliation</h2>
+                    <h2 class="m-filter-name">Affiliation <i class="fa fa-plus"></i></h2>
 
-                    {% for affiliation in filters.affiliation %}
-                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ affiliation|slugy }}]">{{ affiliation }}<i class="fa fa-plus"></i></span></div>
-                    {% endfor %}
+                    <div class="b-item-wrapper">
+                        {% for affiliation in filters.affiliation %}
+                            <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ affiliation|slugy }}]">{{ affiliation }}<i class="fa fa-plus"></i></span></div>
+                        {% endfor %}
+                    </div>
                 {% endif %}
 
                 {% if filters.impact_areas %}
-                    <h2 class="m-filter-name">Impact Areas</h2>
+                    <h2 class="m-filter-name">Impact Areas <i class="fa fa-plus"></i></h2>
 
-                    {% for area in filters.impact_areas %}
-                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ area|slugy }}]">{{ area }}<i class="fa fa-plus"></i></span></div>
-                    {% endfor %}
+                    <div class="b-item-wrapper">
+                        {% for area in filters.impact_areas %}
+                            <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ area|slugy }}]">{{ area }}<i class="fa fa-plus"></i></span></div>
+                        {% endfor %}
+                    </div>
                 {% endif %}
 
                 {% if filters.expertise %}
-                    <h2 class="m-filter-name">Expertise</h2>
+                    <h2 class="m-filter-name">Expertise <i class="fa fa-plus"></i></h2>
 
-                    {% for expertise in filters.expertise %}
-                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ expertise|slugy }}]">{{ expertise }}<i class="fa fa-plus"></i></span></div>
-                    {% endfor %}
+                    <div class="b-item-wrapper">
+                        {% for expertise in filters.expertise %}
+                            <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ expertise|slugy }}]">{{ expertise }}<i class="fa fa-plus"></i></span></div>
+                        {% endfor %}
+                    </div>
                 {% endif %}
 
                 {% if filters.geographic_interest %}
-                    <h2 class="m-filter-name">Geographic Interest</h2>
+                    <h2 class="m-filter-name">Geographic Interest <i class="fa fa-plus"></i></h2>
 
-                    {% for interest in filters.geographic_interest %}
-                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ interest|slugy }}]">{{ interest }}<i class="fa fa-plus"></i></span></div>
-                    {% endfor %}
+                    <div class="b-item-wrapper">
+                        {% for interest in filters.geographic_interest %}
+                            <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ interest|slugy }}]">{{ interest }}<i class="fa fa-plus"></i></span></div>
+                        {% endfor %}
+                    </div>
                 {% endif %}
             </aside>
 
@@ -72,7 +82,7 @@
 
     <section class="b-profile-section">
         {% for person in people %}
-            <div id="profile-{{ loop.index }}" class="b-profile reveal-modal" data-reveal>{% filter trim %}
+            <div id="profile-{{ loop.index }}" class="b-profile reveal-modal" data-reveal>
                 <div class="b-side-bar">
                     {% if person.impact_areas %}
                         <h2 class="m-title">Impact Areas</h2>
@@ -136,7 +146,7 @@
 
                         <p class="m-bio">{{ person.bio }}</p>
                     </div>
-                </div>{% endfilter %}
+                </div>
             </div>
         {% endfor %}
     </section>
