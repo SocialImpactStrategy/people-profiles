@@ -4,7 +4,7 @@ body {
   background-color: rgba(0, 0, 0, 0.03);
   overflow-y: scroll; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .b-message p {
   font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 .b-top-header {
@@ -79,6 +79,22 @@ h1, h2, h3, h4, h5, h6 {
       text-transform: uppercase; }
       .b-top-header .f-dropdown a:hover {
         color: #9D2232; }
+
+.b-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  background-color: #9D2232;
+  z-index: 10000;
+  color: #fff;
+  padding-top: 40%;
+  opacity: .9; }
+  .b-message p {
+    font-weight: 100;
+    font-size: 1.8rem; }
 
 .b-content .inner-wrap {
   min-height: 100vh;
@@ -326,5 +342,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .reveal-modal-bg {
   background-color: rgba(255, 255, 255, 0.7); }
+
+@media only screen and (max-width: 40em) {
+  .b-card {
+    width: 93%;
+    margin: 0 13px 20px 13px; } }
 
 /*# sourceMappingURL=styles.css.map */
