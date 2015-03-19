@@ -54,4 +54,12 @@ $(document).ready(function() {
 
         return false;
     });
+
+    $('.b-profile.reveal-modal').click(function(e) {
+        if (!$.contains($(this).find('.b-main')[0], e.target)) {
+            if (!$.contains($(this).find('.b-side-bar')[0], e.target)) {
+                $(this).foundation('reveal', 'close');
+            }
+        }
+    });
  });

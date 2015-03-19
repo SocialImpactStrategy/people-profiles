@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6, .b-message p {
     border-width: 2px 0 0;
 
     &.small {
-      max-width: 215px;
+      max-width: 215px !important;
     }
 
     &:before, &:after {
@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6, .b-message p {
 }
 
 .b-main-section {
-  padding: 20px 0 30px;
+  padding: 20px 20px 30px;
 
   .left-off-canvas-toggle {
     padding: 4px 10px;
@@ -280,8 +280,8 @@ h1, h2, h3, h4, h5, h6, .b-message p {
 }
 
 .b-card {
-  width: 23.6%;
-  min-width: 190px;
+  width: 23.5%;
+  min-width: 200px;
   display: inline-block;
   border: 1px solid rgb(0,0,0);
   border: 1px solid rgba(0,0,0,0.3);
@@ -347,15 +347,13 @@ h1, h2, h3, h4, h5, h6, .b-message p {
     background-color: transparent;
     border: 0;
     box-shadow: none;
-    left: -20px;
-    right: -10px;
+    text-align: center;
   }
 
   .b-side-bar {
     display: inline-block;
     width: 23%;
     margin: 20px -5px 0 0;
-    padding: 0 20px 20px 10px;
     border: 1px solid #bbb;
     background-color: rgb(255,255,255);
     background-color: rgba(255,255,255,0.95);
@@ -364,6 +362,7 @@ h1, h2, h3, h4, h5, h6, .b-message p {
 
     .m-title {
       margin: 20px 0 10px;
+      padding: 0 20px 0 10px;
       color: $red;
       text-transform: uppercase;
       font-size: 14px;
@@ -371,38 +370,44 @@ h1, h2, h3, h4, h5, h6, .b-message p {
     }
 
     .m-item {
+      padding: 0 20px 0 10px;
       font-size: 14px;
       color: #333;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    :last-child {
+      padding-bottom: 20px;
     }
   }
 
   .b-main {
-    position: relative;
     display: inline-block;
     width: 76.5%;
     border: 1px solid #bbb;
     vertical-align: top;
     background-color: white;
+    text-align: left;
     @include dropshadow-top-nav;
 
     .b-left {
-      width: 49.5%;
-      position: relative;
-      display: inline-block;
-      padding: 0 10px 20px 0;
-      vertical-align: top;
+      padding: 10px 10px 0 10px;
 
       .e-profile-picture {
-        width: 365px;
         height: 365px;
         background-size: cover;
         background-position: center center;
       }
 
+      .b-quotes-wrapper {
+        position: relative;
+      }
+
       .e-open-quotes {
         position: absolute;
-        margin-top: 10px;
-        left: 15px;
+        margin-top: -5px;
         -webkit-transform: rotate(180deg);
         -moz-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
@@ -413,13 +418,13 @@ h1, h2, h3, h4, h5, h6, .b-message p {
       .e-close-quotes {
         position: absolute;
         right: 0;
-        margin-top: -25px;
+        margin-top: -30px;
       }
 
       .m-profile {
         position: relative;
         z-index: 2;
-        margin: 20px 0 0 30px;
+        margin: 20px 0 0 20px;
         color: #949494;
         font-size: 22px;
         line-height: 1.4;
@@ -428,12 +433,7 @@ h1, h2, h3, h4, h5, h6, .b-message p {
     }
 
     .b-right {
-      width: 49.5%;
-      display: inline-block;
       padding: 20px;
-      vertical-align: top;
-
-
 
       .m-name {
         color: #c90000;
@@ -455,7 +455,7 @@ h1, h2, h3, h4, h5, h6, .b-message p {
         margin: 7px 7px 15px 0;
         width: 44px;
         height: 44px;
-        line-height: 44px;
+        line-height: 46px;
         border-radius: 50%;
         color: white;
         text-align: center;
@@ -476,7 +476,32 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   background-color: rgba(255,255,255,0.7);
 }
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 950px) {
+  .b-card {
+    width: 31.5%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .b-card {
+    width: 43.5%;
+  }
+}
+
+@media only screen and (max-width: 495px) {
+  .reveal-modal {
+    .b-main {
+      width: 100%;
+    }
+
+    .close-reveal-modal {
+      right: 1rem;
+      padding-left: 5px;
+      color: #c90000;
+      background-color: white;
+    }
+  }
+
   .b-card {
     width: 93%;
     margin: 0 13px 20px 13px;
