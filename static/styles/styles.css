@@ -21,6 +21,7 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); }
   .b-top-header > a {
     width: 20%;
+    min-width: 185px;
     display: inline-block;
     margin-left: 5%;
     padding: 0 10px;
@@ -50,13 +51,24 @@ h1, h2, h3, h4, h5, h6, .b-message p {
       .b-top-header nav a + a::before {
         content: '•';
         margin-right: 14px;
+        font-size: 10px;
         color: #222; }
+  .b-top-header i {
+    display: none;
+    float: right;
+    margin: 22px 25px 0 0;
+    font-size: 35px;
+    color: #ccc;
+    transition: .2s color linear; }
+    .b-top-header i[aria-expanded="true"] {
+      color: #9d2231; }
+    .b-top-header i:hover {
+      color: #9d2231;
+      cursor: pointer; }
   .b-top-header .f-dropdown {
     border-color: #9D2232;
     border-style: solid;
     border-width: 2px 0 0; }
-    .b-top-header .f-dropdown.small {
-      max-width: 215px !important; }
     .b-top-header .f-dropdown:before, .b-top-header .f-dropdown:after {
       content: '';
       border: 0;
@@ -65,7 +77,6 @@ h1, h2, h3, h4, h5, h6, .b-message p {
       height: 32px;
       line-height: 32px;
       min-width: 165px;
-      max-width: 215px;
       position: static;
       color: #999999;
       background: #121212;
@@ -250,6 +261,8 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   border: 0;
   box-shadow: none;
   text-align: center; }
+.b-profile .close-reveal-modal {
+  display: none; }
 .b-profile .b-side-bar {
   display: inline-block;
   width: 23%;
@@ -284,13 +297,14 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   text-align: left;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); }
   .b-profile .b-main .b-left {
-    padding: 10px 10px 0 10px; }
+    padding: 0 10px 0 0; }
     .b-profile .b-main .b-left .e-profile-picture {
       height: 365px;
       background-size: cover;
       background-position: center center; }
     .b-profile .b-main .b-left .b-quotes-wrapper {
-      position: relative; }
+      position: relative;
+      padding-left: 10px; }
     .b-profile .b-main .b-left .e-open-quotes {
       position: absolute;
       margin-top: -5px;
@@ -343,7 +357,15 @@ h1, h2, h3, h4, h5, h6, .b-message p {
 
 @media only screen and (max-width: 950px) {
   .b-card {
-    width: 31.5%; } }
+    width: 31.5%; }
+
+  .b-top-header nav {
+    display: none; }
+  .b-top-header i {
+    display: inline-block; }
+
+  .b-profile .b-main .b-left {
+    padding: 10px 10px 0 10px; } }
 @media only screen and (max-width: 750px) {
   .b-card {
     width: 43.5%; } }
@@ -351,6 +373,7 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   .reveal-modal .b-main {
     width: 100%; }
   .reveal-modal .close-reveal-modal {
+    display: block;
     right: 1rem;
     padding-left: 5px;
     color: #c90000;
