@@ -58,14 +58,7 @@
 
             <main class="b-main-section">
                 <div class="row">
-                    <div class="column small-12 show-for-small-only">
-                        <div class="b-message">
-                            <p>We are working on bringing you a mobile-ready version of this page. In the meantime, please visit this page from a desktop or laptop computer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div><span class="left-off-canvas-toggle">Filters</span></div>
+                    <div class="show-for-medium-up"><span class="left-off-canvas-toggle">Filters</span></div>
 
                     <div class="b-cards-wrapper column large-12">
                         {% for person in people %}
@@ -89,13 +82,13 @@
 
     <section class="b-profile-section">
         {% for person in people %}
-            <div id="profile-{{ loop.index }}" class="b-profile reveal-modal" data-reveal>
-                <div class="b-side-bar">
+            <div id="profile-{{ loop.index }}" class="b-profile reveal-modal row large-collapse" data-reveal>
+                <span class="b-side-bar column medium-4 show-for-medium-up">
                     {% if person.impact_areas %}
                         <h2 class="m-title">Impact Areas</h2>
 
                         {% for x in person.impact_areas %}
-                            <div class="m-item">{{ x }}</div>
+                            <div class="m-item" title="{{ x }}">{{ x }}</div>
                         {% endfor %}
                     {% endif %}
 
@@ -103,7 +96,7 @@
                         <h2 class="m-title">Expertise</h2>
 
                          {% for x in person.expertise %}
-                            <div class="m-item">{{ x }}</div>
+                            <div class="m-item" title="{{ x }}">{{ x }}</div>
                          {% endfor %}
                     {% endif %}
 
@@ -111,21 +104,23 @@
                         <h2 class="m-title">Geographic Interest</h2>
 
                          {% for x in person.geographic_interest %}
-                            <div class="m-item">{{ x }}</div>
+                            <div class="m-item" title="{{ x }}">{{ x }}</div>
                          {% endfor %}
                     {% endif %}
-                </div>
+                </span>
 
-                <div class="b-main">
-                    <div class="b-left">
+                <div class="b-main column medium-8 small-centered">
+                    <div class="b-left column large-6">
                         <div class="e-profile-picture" style="background-image: url(./static/img/profiles/{{ person.image }})" alt="{{ person.name }} {{ person.last }}"></div>
 
-                        <img class="e-open-quotes" src="./static/img/quotes.png" alt="Open quotes">
-                        <p class="m-profile">{{ person.profile }}</p>
-                        <img class="e-close-quotes" src="./static/img/quotes.png" alt="Close quotes">
+                        <div class="b-quotes-wrapper show-for-large-up">
+                            <img class="e-open-quotes" src="./static/img/quotes.png" alt="Open quotes">
+                            <p class="m-profile">{{ person.profile }}</p>
+                            <img class="e-close-quotes" src="./static/img/quotes.png" alt="Close quotes">
+                        </div>
                     </div>
 
-                    <div class="b-right">
+                    <div class="b-right column large-6">
                         <h2 class="m-name">{{ person.name }} {{ person.last }}</h2>
                         <h3 class="m-role">{{ person.role }}</h3>
 
@@ -154,6 +149,7 @@
                         <p class="m-bio">{{ person.bio }}</p>
                     </div>
                 </div>
+                    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
             </div>
         {% endfor %}
     </section>
