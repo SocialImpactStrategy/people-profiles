@@ -262,10 +262,10 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   box-shadow: none;
   text-align: center; }
 .b-profile .close-reveal-modal {
-  display: none; }
+  padding: 0 5px;
+  color: #c90000;
+  background-color: white; }
 .b-profile .b-side-bar {
-  display: inline-block;
-  width: 23%;
   margin: 20px -5px 0 0;
   border: 1px solid #bbb;
   background-color: white;
@@ -289,15 +289,14 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   .b-profile .b-side-bar :last-child {
     padding-bottom: 20px; }
 .b-profile .b-main {
-  display: inline-block;
-  width: 76.5%;
   border: 1px solid #bbb;
+  padding-bottom: 20px;
   vertical-align: top;
   background-color: white;
   text-align: left;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); }
   .b-profile .b-main .b-left {
-    padding: 0 10px 0 0; }
+    padding: 10px 10px 0 10px; }
     .b-profile .b-main .b-left .e-profile-picture {
       height: 365px;
       background-size: cover;
@@ -326,7 +325,7 @@ h1, h2, h3, h4, h5, h6, .b-message p {
       line-height: 1.4;
       font-weight: 300; }
   .b-profile .b-main .b-right {
-    padding: 20px; }
+    padding: 20px 20px 0 20px; }
     .b-profile .b-main .b-right .m-name {
       color: #c90000;
       font-weight: 300; }
@@ -336,6 +335,16 @@ h1, h2, h3, h4, h5, h6, .b-message p {
       font-size: 18px; }
     .b-profile .b-main .b-right .m-bio {
       color: #949494; }
+    .b-profile .b-main .b-right .b-info .m-title {
+      margin: 20px 0 10px;
+      color: #9D2232;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1rem; }
+    .b-profile .b-main .b-right .b-info .m-item {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
     .b-profile .b-main .b-right .e-contact-icon {
       display: inline-block;
       margin: 7px 7px 15px 0;
@@ -355,6 +364,21 @@ h1, h2, h3, h4, h5, h6, .b-message p {
 .reveal-modal-bg {
   background-color: rgba(255, 255, 255, 0.7); }
 
+@media only screen and (min-width: 40.063em) {
+  /* min-width 641px */
+  .b-profile .b-main .b-left {
+    padding: 0.9375rem 0 0 0;
+    /* Same padding that foundation set .column */ } }
+@media only screen and (min-width: 64.063em) {
+  /* min-width 1025px */
+  .b-profile .b-main .column {
+    padding: 0; }
+    .b-profile .b-main .column .b-left {
+      padding: 0 10px 0 0; } }
+@media only screen and (min-width: 90.063em) {
+  /* min-width 1441px */ }
+@media only screen and (min-width: 120.063em) {
+  /* min-width 1921px */ }
 @media only screen and (max-width: 950px) {
   .b-card {
     width: 31.5%; }
@@ -362,23 +386,11 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   .b-top-header nav {
     display: none; }
   .b-top-header i {
-    display: inline-block; }
-
-  .b-profile .b-main .b-left {
-    padding: 10px 10px 0 10px; } }
+    display: inline-block; } }
 @media only screen and (max-width: 750px) {
   .b-card {
     width: 43.5%; } }
 @media only screen and (max-width: 495px) {
-  .reveal-modal .b-main {
-    width: 100%; }
-  .reveal-modal .close-reveal-modal {
-    display: block;
-    right: 1rem;
-    padding-left: 5px;
-    color: #c90000;
-    background-color: white; }
-
   .b-card {
     width: 93%;
     margin: 0 13px 20px 13px; } }

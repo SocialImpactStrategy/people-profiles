@@ -20,9 +20,14 @@ def loadAcademyData():
             ctx['filters']['year'].add(str(person['year']))
 
         if person['affiliation']:
-            person['filters'].add(slugy(person['affiliation']))
+            aux = person['affiliation']
 
-            ctx['filters']['affiliation'].add(person['affiliation'])
+            if aux == 'PSIH Fellow, Staff':
+                aux = 'Staff'
+
+            person['filters'].add(slugy(aux))
+
+            ctx['filters']['affiliation'].add(aux)
 
         if person['impact_areas']:
             lst = [slugy(x) for x in person['impact_areas']]

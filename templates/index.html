@@ -82,74 +82,111 @@
 
     <section class="b-profile-section">
         {% for person in people %}
-            <div id="profile-{{ loop.index }}" class="b-profile reveal-modal row large-collapse" data-reveal>
-                <span class="b-side-bar column medium-4 show-for-medium-up">
-                    {% if person.impact_areas %}
-                        <h2 class="m-title">Impact Areas</h2>
+            <div id="profile-{{ loop.index }}" class="b-profile reveal-modal row medium-collapse" data-reveal>
+                <div class="column medium-3 show-for-medium-up">
+                    <div class="b-side-bar">
+                        {% if person.impact_areas %}
+                            <h2 class="m-title">Impact Areas</h2>
 
-                        {% for x in person.impact_areas %}
-                            <div class="m-item" title="{{ x }}">{{ x }}</div>
-                        {% endfor %}
-                    {% endif %}
+                            {% for x in person.impact_areas %}
+                                <div class="m-item" title="{{ x }}">{{ x }}</div>
+                            {% endfor %}
+                        {% endif %}
 
-                    {% if person.expertise %}
-                        <h2 class="m-title">Expertise</h2>
+                        {% if person.expertise %}
+                            <h2 class="m-title">Expertise</h2>
 
-                         {% for x in person.expertise %}
-                            <div class="m-item" title="{{ x }}">{{ x }}</div>
-                         {% endfor %}
-                    {% endif %}
+                             {% for x in person.expertise %}
+                                <div class="m-item" title="{{ x }}">{{ x }}</div>
+                             {% endfor %}
+                        {% endif %}
 
-                    {% if person.geographic_interest %}
-                        <h2 class="m-title">Geographic Interest</h2>
+                        {% if person.geographic_interest %}
+                            <h2 class="m-title">Geographic Interest</h2>
 
-                         {% for x in person.geographic_interest %}
-                            <div class="m-item" title="{{ x }}">{{ x }}</div>
-                         {% endfor %}
-                    {% endif %}
-                </span>
-
-                <div class="b-main column medium-8 small-centered">
-                    <div class="b-left column large-6">
-                        <div class="e-profile-picture" style="background-image: url(./static/img/profiles/{{ person.image }})" alt="{{ person.name }} {{ person.last }}"></div>
-
-                        <div class="b-quotes-wrapper show-for-large-up">
-                            <img class="e-open-quotes" src="./static/img/quotes.png" alt="Open quotes">
-                            <p class="m-profile">{{ person.profile }}</p>
-                            <img class="e-close-quotes" src="./static/img/quotes.png" alt="Close quotes">
-                        </div>
-                    </div>
-
-                    <div class="b-right column large-6">
-                        <h2 class="m-name">{{ person.name }} {{ person.last }}</h2>
-                        <h3 class="m-role">{{ person.role }}</h3>
-
-                        <div class="b-contact">
-                            {% if person.email %}
-                                <a href="mailto:{{ person.email }}" class="e-contact-icon" target="_blank" alt="Email"><i class="fa fa-envelope"></i></a>
-                            {% endif %}
-
-                            {% if person.facebook %}
-                                <a href="{{ person.facebook }}" class="e-contact-icon" target="_blank" alt="Facebook"  ><i class="fa fa-facebook"></i></a>
-                            {% endif %}
-
-                            {% if person.linkedin %}
-                                <a href="{{ person.linkedin }}" class="e-contact-icon" target="_blank" alt="LinkedIn"><i class="fa fa-linkedin"></i></a>
-                            {% endif %}
-
-                            {% if person.twitter %}
-                                <a href="{{ person.twitter }}" class="e-contact-icon" target="_blank" alt="Twitter"><i class="fa fa-twitter"></i></a>
-                            {% endif %}
-
-                            {% if person.website %}
-                                <a href="{{ person.website }}" class="e-contact-icon" target="_blank" alt="Website"><i class="fa fa-home"></i></a>
-                            {% endif %}
-                        </div>
-
-                        <p class="m-bio">{{ person.bio }}</p>
+                             {% for x in person.geographic_interest %}
+                                <div class="m-item" title="{{ x }}">{{ x }}</div>
+                             {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
-                    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+
+                <div class="column small-12 medium-9 small-centered medium-uncentered">
+                    <div class="b-main">
+                        <div class="row">
+                            <div class="column large-6">
+                                <div class="b-left">
+                                    <div class="e-profile-picture" style="background-image: url(./static/img/profiles/{{ person.image }})" alt="{{ person.name }} {{ person.last }}"></div>
+
+                                    <div class="b-quotes-wrapper show-for-large-up">
+                                        <img class="e-open-quotes" src="./static/img/quotes.png" alt="Open quotes">
+                                        <p class="m-profile">{{ person.profile }}</p>
+                                        <img class="e-close-quotes" src="./static/img/quotes.png" alt="Close quotes">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column large-6">
+                                <div class="b-right">
+                                    <h2 class="m-name">{{ person.name }} {{ person.last }}</h2>
+                                    <h3 class="m-role">{{ person.role }}</h3>
+
+                                    <div class="b-contact">
+                                        {% if person.email %}
+                                            <a href="mailto:{{ person.email }}" class="e-contact-icon" target="_blank" alt="Email"><i class="fa fa-envelope"></i></a>
+                                        {% endif %}
+
+                                        {% if person.facebook %}
+                                            <a href="{{ person.facebook }}" class="e-contact-icon" target="_blank" alt="Facebook"  ><i class="fa fa-facebook"></i></a>
+                                        {% endif %}
+
+                                        {% if person.linkedin %}
+                                            <a href="{{ person.linkedin }}" class="e-contact-icon" target="_blank" alt="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                                        {% endif %}
+
+                                        {% if person.twitter %}
+                                            <a href="{{ person.twitter }}" class="e-contact-icon" target="_blank" alt="Twitter"><i class="fa fa-twitter"></i></a>
+                                        {% endif %}
+
+                                        {% if person.website %}
+                                            <a href="{{ person.website }}" class="e-contact-icon" target="_blank" alt="Website"><i class="fa fa-home"></i></a>
+                                        {% endif %}
+                                    </div>
+
+                                    <p class="m-bio">{{ person.bio }}</p>
+
+                                    <div class="b-info show-for-small-only">
+                                        {% if person.impact_areas %}
+                                            <h2 class="m-title">Impact Areas</h2>
+
+                                            {% for x in person.impact_areas %}
+                                                <div class="m-item" title="{{ x }}">{{ x }}</div>
+                                            {% endfor %}
+                                        {% endif %}
+
+                                        {% if person.expertise %}
+                                            <h2 class="m-title">Expertise</h2>
+
+                                             {% for x in person.expertise %}
+                                                <div class="m-item" title="{{ x }}">{{ x }}</div>
+                                             {% endfor %}
+                                        {% endif %}
+
+                                        {% if person.geographic_interest %}
+                                            <h2 class="m-title">Geographic Interest</h2>
+
+                                             {% for x in person.geographic_interest %}
+                                                <div class="m-item" title="{{ x }}">{{ x }}</div>
+                                             {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="close-reveal-modal show-for-small-only" aria-label="Close">&#215;</a>
             </div>
         {% endfor %}
     </section>

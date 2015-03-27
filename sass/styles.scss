@@ -256,9 +256,6 @@ h1, h2, h3, h4, h5, h6, .b-message p {
         .fa { opacity: 1; }
         .fa:before { content: "\f00d"; }
       }
-
-
-
     }
   }
 }
@@ -366,12 +363,12 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   }
 
   .close-reveal-modal {
-    display: none;
+    padding: 0 5px;
+    color: #c90000;
+    background-color: white;
   }
 
   .b-side-bar {
-    display: inline-block;
-    width: 23%;
     margin: 20px -5px 0 0;
     border: 1px solid #bbb;
     background-color: rgb(255,255,255);
@@ -403,16 +400,15 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   }
 
   .b-main {
-    display: inline-block;
-    width: 76.5%;
     border: 1px solid #bbb;
+    padding-bottom: 20px;
     vertical-align: top;
     background-color: white;
     text-align: left;
     @include dropshadow-top-nav;
 
     .b-left {
-      padding: 0 10px 0 0;
+      padding: 10px 10px 0 10px;
 
       .e-profile-picture {
         height: 365px;
@@ -453,7 +449,7 @@ h1, h2, h3, h4, h5, h6, .b-message p {
     }
 
     .b-right {
-      padding: 20px;
+      padding: 20px 20px 0 20px;
 
       .m-name {
         color: #c90000;
@@ -468,6 +464,22 @@ h1, h2, h3, h4, h5, h6, .b-message p {
 
       .m-bio {
         color: #949494;
+      }
+
+      .b-info {
+        .m-title {
+          margin: 20px 0 10px;
+          color: $red;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 1rem;
+        }
+
+        .m-item {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
       }
 
       .e-contact-icon {
@@ -486,7 +498,9 @@ h1, h2, h3, h4, h5, h6, .b-message p {
           text-rendering: optimizeLegibility;
         }
 
-        .fa-envelope { font-size: 1.2rem; }
+        .fa-envelope {
+          font-size: 1.2rem;
+        }
       }
     }
   }
@@ -496,6 +510,37 @@ h1, h2, h3, h4, h5, h6, .b-message p {
   background-color: rgba(255,255,255,0.7);
 }
 
+
+// Medium screens.
+@media only screen and (min-width: 40.063em) { /* min-width 641px */
+  .b-profile .b-main .b-left {
+    padding: 0.9375rem 0 0 0; /* Same padding that foundation set .column */
+  }
+
+}
+
+// Large screens.
+@media only screen and (min-width: 64.063em) { /* min-width 1025px */
+  .b-profile .b-main .column {
+    padding: 0;
+
+    .b-left {
+      padding: 0 10px 0 0;
+    }
+  }
+}
+
+// XLarge screens.
+@media only screen and (min-width: 90.063em) { /* min-width 1441px */
+
+}
+
+// XXLarge screens.
+@media only screen and (min-width: 120.063em) { /* min-width 1921px */
+
+}
+
+// TODO: remove all media queries below.
 @media only screen and (max-width: 950px) {
   .b-card {
     width: 31.5%;
@@ -510,10 +555,6 @@ h1, h2, h3, h4, h5, h6, .b-message p {
       display: inline-block;
     }
   }
-
-  .b-profile .b-main .b-left {
-    padding: 10px 10px 0 10px;
-  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -523,20 +564,6 @@ h1, h2, h3, h4, h5, h6, .b-message p {
 }
 
 @media only screen and (max-width: 495px) {
-  .reveal-modal {
-    .b-main {
-      width: 100%;
-    }
-
-    .close-reveal-modal {
-      display: block;
-      right: 1rem;
-      padding-left: 5px;
-      color: #c90000;
-      background-color: white;
-    }
-  }
-
   .b-card {
     width: 93%;
     margin: 0 13px 20px 13px;

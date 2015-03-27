@@ -62,4 +62,22 @@ $(document).ready(function() {
             }
         }
     });
+
+    $(document).on('open.fndtn.reveal', '[data-reveal]', function () {
+        var $copy = $(this).clone().css('display', 'block').appendTo('body'),
+            h01 = $copy.find('.b-main').height(),
+            h02 = $copy.find('.b-side-bar').outerHeight(true);
+
+        if (window.innerWidth > 641) { // Medium screens and up.
+            if (h01 < h02) {
+                $(this).find('.b-main').height(h02);
+            }
+
+        } else {
+            $(this).find('.b-main').css('height', 'auto');
+        }
+
+        $copy.remove();
+    });
  });
+
